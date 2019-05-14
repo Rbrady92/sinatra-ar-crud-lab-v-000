@@ -1,4 +1,8 @@
-<% @articles.each do |article| %>
-<h2><%= article.title %></h2>
-<p><%= article.content %></p>
+<h1>Articles:</h1>
+<% Article.all.each do |art| %>
+  <h2><a href="/articles/<%= art.id %>"><%= art.title %></a></h2>
 <% end %>
+
+<form action='/articles/new' method='get'>
+  <input type='submit' value='New'>
+</form>
