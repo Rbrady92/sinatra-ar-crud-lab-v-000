@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/articles' do
-    Article.create(name: params[:name], content: params[:content])
+    Article.create(name: params[:title], content: params[:content])
 
     erb :index
   end
@@ -39,7 +39,7 @@ class ApplicationController < Sinatra::Base
   end
 
   patch 'articles/:id' do
-    Article.update(params[:id], name: params[:name], content: params[:content])
+    Article.update(params[:id], title: params[:title], content: params[:content])
 
     erb :show
   end
