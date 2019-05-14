@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
     @new_article = Article.create(name: params[:title], content: params[:content])
     @new_article.save
 
-    redirect '/articles'
+    redirect to '/articles'
   end
 
   get 'articles' do
